@@ -1,0 +1,13 @@
+1. What are the different activities that we do using javascript in client side programming?
+
+->allows user to interact with web pages
+->create web and mobile apps
+->vadilating before sending it to the web server
+->building web servers and developing server applications
+->Game developing
+
+2. What is JavaScript engine for Safari?
+
+->Notable engines
+->JavaScriptCore is Apple's engine for its Safari browser.
+JavaScriptCore is often referred with different names, such as ​SquirrelFish and ​SquirrelFish Extreme. Within the context of Safari, Nitro and Nitro Extreme are also commonly used. However, the name of the project and the library is always JavaScriptCore.

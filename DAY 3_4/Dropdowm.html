@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Branch photo based on branch name</h1>
+    Select Branch  :  
+		<select id="s1"  onchange="fn_updateImage()">
+			<option>Hyderabad</option>
+			<option>Pune</option>
+			<option>Banglore</option>
+            <option>Chennai</option>
+		</select>
+		<br/><br/>
+		<img   src="images/Hyderabad.jpg"  id="img1"  border="2"  width="300"  height="200"  />
+		
+ 
+	 
+		
+		<script>
+		
+			  //  value ---   input, select, textarea
+			  function fn_updateImage()
+			  {
+					var  selectObj  =  document.getElementById("s1");
+					var   imgObj =   document.getElementById("img1");
+					
+					imgObj.src = "images/"  +  selectObj.value + ".jpg";
+				 
+			  }
+			
+			 
+			 
+		</script>
+		
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form  action="Login.php"  onsubmit="fn_submitData()">
+			
+        Customer Name <span style="color:red;">*</span> :  <input type="name"  id="name" name="name"  onblur="fn_cursorLeave1()"  autofocus  />    
+        <span id="sp1" style="color:red;"></span><br/><br/>
+        Source Station  :  <input type="text"  id="s1" name="s1"  />      <br/><br/>
+        Destination Station :  <input type="text"  id="d1" name="d1"  />      <br/><br/>
+        Contact Number : <input type="number" id="no" name="no"   onblur="fn_cursorLeave2()" />
+        <span id="sp2" style="color:red;"></span><br/><br/>
+        <input  type="submit"  value="Register"  />		
+    </form>
+
+    <script> 	 
+        function fn_submitData()
+        {
+              var sourceStationObj  =  document.getElementById("s1").value;
+              var destStationObj  =  document.getElementById("d1").value;
+              
+         
+              
+              if(sourceStationObj ==  destStationObj)
+              {
+                  
+                  alert("Source and destination sholud not be the same");
+                  event.preventDefault();
+              }
+              else
+              {
+                  //allow the submission
+                 
+              }
+        } 
+
+        
+        
+        
+       function  fn_cursorLeave1()
+       {
+              var custName  =  document.getElementById("name").value;
+              
+              if(custName.trim() ==  "")
+              {
+                       
+                       document.getElementById("sp1").innerHTML =  "Customer Name is required";
+                       document.getElementById("name").focus();
+              }
+              else
+              {
+                  document.getElementById("sp1").innerHTML =  "";
+              }   
+       }
+
+       function  fn_cursorLeave2()
+       {
+              var custNo  =  document.getElementById("no").value;
+              
+              if(custNo.trim() == "")
+              {
+                       
+                document.getElementById("sp2").innerHTML =  "Customer Number is required";
+                document.getElementById("no").focus();
+              }
+              else if(custNo.length != 10)
+              {
+                document.getElementById("sp2").innerHTML =  "please enter 10 numbers";
+                document.getElementById("no").focus();
+                event.preventDefault();
+              }
+              else
+              {
+                  document.getElementById("sp2").innerHTML =  "";
+              }   
+       }
+  </script>
+</body>
+</html>

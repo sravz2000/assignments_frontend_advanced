@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    Product Name : <input type="text" id="t1" ><br/><br/>
+    Unit Price : <input type="text" id="t2" ><br/><br/>
+    Units In Stock : <input type="text" id="t3" ><br/><br/>
+    </form>
+    <input type="button" id="b1" value="Add Row" ><br/><br/>
+    <table  id="table1" border="2" width="400px">
+        <tr>
+            <th>Product Name</th>
+            <th>Unit Price</th>
+            <th>Units In Stock</th>
+        </tr>
+    </table>
+
+    <script  src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <script>
+        
+        
+         $(document).ready(function()
+            {
+                    $("#b1").click(function()  
+                    { 
+                        let str="<tr><td>"+$("#t1").val()+"</td><td>"+$("#t2").val()+"</td><td>"+$("#t3").val()+"</td></tr>";
+                        
+                        $("#table1").append(str);					
+                    });          
+            
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        img{
+            width:100px ;
+            height:100px; 
+            border:2px;
+            border-radius: 50%;
+        }
+        td{
+            width:120px;
+            height:120px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <table>
+        <tr>
+            <td><img src="images/1.jpg" class="c1" ></td>
+            <td><img src="images/2.jpg" class="c2" ></td>
+            <td><img src="images/3.jpg" class="c1" ></td>
+            <td><img src="images/4.jpg" class="c2" ></td>
+        </tr>
+        <tr>
+            <td><img src="images/5.jpg" class="c2" ></td>
+            <td><img src="images/6.jpg" class="c1" ></td>
+            <td><img src="images/7.jpg" class="c2" ></td>
+            <td><img src="images/8.jpg" class="c1" ></td>
+        </tr>
+        <tr>
+            <td><img src="images/9.jpg" class="c1" ></td>
+            <td><img src="images/10.jpg" class="c2" ></td>
+            <td><img src="images/11.jpg" class="c1" ></td>
+            <td><img src="images/12.jpg" class="c2" ></td>
+        </tr>
+        <tr>
+            <td><img src="images/13.jpg" class="c2" ></td>
+            <td><img src="images/14.jpg" class="c1" ></td>
+            <td><img src="images/15.jpg" class="c2" ></td>
+            <td><img src="images/16.jpg" class="c1" ></td>
+        </tr>
+    </table>
+
+    <script  src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	
+	<script>
+	
+		$(document).ready(function()
+		{	
+           var a;
+           setInterval(function()
+           { 
+                $(".c1").toggle(2000);	
+
+                a=setTimeout(function()
+                {
+                    
+                    $(".c2").toggle(2000);	
+                    
+                },2000);
+                
+                
+
+            },2000);
+            
+
+		   /*setInterval(function(){ $(".c1").fadeToggle(3000);	},1000);
+
+           setTimeout(function()
+           {
+             setInterval(function()
+             {
+                $(".c2").fadeToggle(3000);	
+             },1000);
+           },3000);*/
+           		
+		});
+				
+	</script>
+
+</body>
+</html>

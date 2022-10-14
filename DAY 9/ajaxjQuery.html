@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+            float: left;
+            text-decoration: underline;
+            color: red;
+            text-align: center;
+            width: 300px;
+        }
+        img{
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <button  id="b1">Get Server Data</button><br/>
+   
+    
+
+    
+   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
+        
+    <script>	
+        $(document).ready(function()
+        {
+            $("#b1").click(function(){				  
+                $.ajax(
+                {
+                    url : "https://reqres.in/api/users",
+                    type: "GET",
+                    success :  function(response)
+                    {
+                        let  resData = (response);
+                        //alert(resData);
+                        displayData(resData.data);
+                    }		
+                });				 
+			});
+
+            function   displayData(resData)
+			{
+				console.log(resData);
+                for(let  i=0;i<resData.length;i++)
+				{
+                  var s="<div><img src="+resData[i].avatar+"><br/><span>"+resData[i].first_name+"</span><span>"+resData[i].last_name+"</span></div>";
+                  $("body").append(s);
+                }
+            }
+				
+        });
+                    
+    </script>
+</body>
+</html>

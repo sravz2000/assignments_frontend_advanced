@@ -1,0 +1,11 @@
+5.  How to use next() and prev() methods in jquery?
+
+.prev()
+->Get the immediately preceding sibling of each element in the set of matched elements. If a selector is provided, it retrieves the previous sibling only if it matches that selector.
+->The .prev() method searches for the predecessor of each of these elements in the DOM tree and constructs a new jQuery object from the matching elements.
+->$(".t1").prev().css("background-color","red")
+
+.next()
+->Get the immediately following sibling of each element in the set of matched elements. If a selector is provided, it retrieves the next sibling only if it matches that selector.
+->The .next() method allows us to search through the immediately following sibling of these elements in the DOM tree and construct a new jQuery object from the matching elements.
+->$(".t1").next().css("background-color","red")

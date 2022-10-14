@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="table1" border="2" width="400px">
+        <tr>
+            <th>Product Name</th>
+            <th>Unit Price</th>
+            <th>Units In Stock</th>
+        </tr>
+        <tr>
+            <td>Printer</td>
+            <td>2500.00</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>4GB-RAM</td>
+            <td>1200.00</td>
+            <td>23</td>
+        </tr>	 
+        <tr>
+            <td>Printer</td>
+            <td>2500.00</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>1TB Samsung HDD</td>
+            <td>4500.00</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>32-GB Kingston USB</td>
+            <td>800.00</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Wifi Router</td>
+            <td>1800.00</td>
+            <td>0</td>
+        </tr> 
+        <tr>
+            <td colspan="3" style="text-align: center;">Summary</td>
+        </tr>
+    </table>  
+    <script  src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	
+	<script>
+	
+		$(document).ready(function()
+		{
+           
+            $("#table1 tr").each(function()
+            {
+           
+                if($(this).children().last().text()=="0")
+                {
+                // alert(this);
+                    $(this).css("background-color",  "pink");
+                }
+                else
+                {
+                // alert(this);
+                    $(this).css("background-color",  "lightgreen");
+                }
+
+                $("#table1  tr:first").css("background-color",  "lightblue");
+                $("#table1  tr:last").css("background-color",  "lightgray");
+            });
+		 
+		});
+				
+	</script>
+</body>
+</html>

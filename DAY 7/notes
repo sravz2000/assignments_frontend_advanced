@@ -1,0 +1,10 @@
+1. What is setInterval()  and setTimeout() methods in JavaScript?
+
+->setTimeout() calls a passed-in function once after a specified delay.
+->while setInterval() invokes one continuously at a designated time. 
+->As JavaScript is a singly-threaded language, both methods allow your code to run asynchronously.
+
+2. Why do we use callbacks in JavaScript?
+
+->We need callback functions because many JavaScript actions are asynchronous, which means they don't really stop the program (or a function) from running until they're completed.
+->Callbacks are important for anyone using server-based technology to provide real-time reporting for business intelligence purposes. From a purely mechanical perspective, callbacks are the method by which data is pulled from a server to another.

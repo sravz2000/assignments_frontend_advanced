@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Search Value : <input type="text" id="s1" />
+    <input type="button"   value="Find By EmpNo"   onclick="fn_findByEmpno()"  />
+    <input type="button"   value="Find by Job"   onclick="fn_job()"  /><br/><br/>
+
+    <table  id="table1"  border="2"  width="500"  cellpadding="10" cellspacing="0">
+        <tr>
+                <th>Empno</th>
+                <th>Ename</th>
+                <th>Job</th>
+                <th>Salary</th>
+                <th>Deptno</th>
+        </tr>
+    </table>
+    <script>	
+		
+			
+        var  EmpArray =   [
+            {Empno :  454545,   Ename  :  "Smith-1",  Job :  "Angular", Salary : 700000 , Deptno : 1000},
+            {Empno :  454546,   Ename  :  "Smith-2",  Job :  "Bootstrap", Salary : 500000 , Deptno : 2000},
+            {Empno :  454547,   Ename  :  "Smith-3",  Job :  "Node JS", Salary : 500000 , Deptno : 1000},
+            {Empno :  454548,   Ename  :  "Smith-4",  Job :  "Bootstrap", Salary : 600000 , Deptno : 4000},
+            {Empno :  454549,   Ename  :  "Smith-5",  Job :  "CSS3", Salary : 900000 , Deptno : 1000},
+            {Empno :  454542,   Ename  :  "Smith-5",  Job :  "Bootstrap", Salary : 400000 , Deptno : 9800},
+            {Empno :  454543,   Ename  :  "Smith-6",  Job :  "jQuery", Salary : 1000000 , Deptno : 1000}
+        ];
+    
+    
+     
+          function fn_findByEmpno()
+          {		
+            var  textObj =  document.getElementById("s1");
+            //console.log(textObj.value);
+            var item=EmpArray.find(item => item.Empno == textObj.value);
+           // console.log(item); 
+
+            var  tableObj =  document.getElementById("table1");
+            var len = tableObj.rows.length;
+			  
+						if(len>1){
+						  tableObj.deleteRow(-1);
+						}
+
+            var  row1 =  tableObj.insertRow(-1);			
+						
+            var  cell1 =  row1.insertCell(-1);
+            var  cell2 =  row1.insertCell(-1);
+            var  cell3 =  row1.insertCell(-1);
+            var  cell4 =  row1.insertCell(-1);
+            var  cell5 =  row1.insertCell(-1);
+
+            
+            cell1.innerHTML = item.Empno;						
+            cell2.innerHTML = item.Ename;						
+            cell3.innerHTML = item.Job;
+            cell4.innerHTML = item.Salary;
+            cell5.innerHTML = item.Deptno;
+
+          }		
+          
+
+          function fn_job()
+
+          {		
+            var  textObj =  document.getElementById("s1");
+
+            var ite=EmpArray.filter(it => it.Job == textObj.value);
+            var  tableObj =  document.getElementById("table1");
+
+            var len = tableObj.rows.length;
+			  
+						for(var i=0;i<(len-1);i++){ 
+							tableObj.deleteRow(-1);
+            }
+
+            for(let  item  of  ite)
+            {
+            var  row1 =  tableObj.insertRow(-1);			
+						
+            var  cell1 =  row1.insertCell(-1);
+            var  cell2 =  row1.insertCell(-1);
+            var  cell3 =  row1.insertCell(-1);
+            var  cell4 =  row1.insertCell(-1);
+            var  cell5 =  row1.insertCell(-1);
+
+            
+            cell1.innerHTML = item.Empno;						
+            cell2.innerHTML = item.Ename;						
+            cell3.innerHTML = item.Job;
+            cell4.innerHTML = item.Salary;
+            cell5.innerHTML = item.Deptno;
+            }
+                                
+          }		 
+         
+    </script>
+</body>
+</html>

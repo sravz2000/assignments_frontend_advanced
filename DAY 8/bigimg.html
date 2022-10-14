@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <img   src="Images/Image1.jpg"  class="c1" id="img1"  border="2"  width="80"  height="60"  />
+		<img   src="Images/Image2.jpg"  class="c1" id="img2"  border="2"  width="80"  height="60"  />
+		<img   src="Images/Image3.jpg"  class="c1" id="img3"  border="2"  width="80"  height="60"  />
+		<img   src="Images/Image4.jpg"  class="c1" id="img4"  border="2"  width="80"  height="60"  />
+		<hr/>
+		<img   src="Images/Image1.jpg"  id="bigImg"  border="2"  width="340"  height="340"  />
+		
+ 
+	 
+        <script  src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+		
+		<script>
+		
+        $(document).ready(function(){
+            $(".c1").hover(function(){
+                $("#bigImg").attr("src",$(this).attr("src"));
+            })
+
+        });
+			  		   
+			 
+		</script>
+</body>
+</html>

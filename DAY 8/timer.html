@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="timer">00:00:00</h2>
+    <input type="button" value="Start" id="startbtn">
+    <input type="button" value="stop" id="stopbtn">
+    <input type="button" value="clear" id="clearbtn">
+    
+
+    <script  src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+        
+            var hours = 0;
+            var mins = 0;
+            var seconds = 0;
+            var a;
+            function pad2(number){
+                return (number < 10 ? '0' : '') + number;
+            }
+            $("#startbtn").click(function(){a=setInterval(function(){
+                seconds++;
+                if(seconds>59)
+                {
+                    seconds=0;
+                    mins++;
+                    if(mins>59)
+                    {
+                    mins=0;
+                    hours++;
+                    }
+                }
+                $("#timer").html(pad2(hours)+":"+pad2(mins)+":"+pad2(seconds));  
+
+            },1000);
+            
+              
+            });
+            $("#stopbtn").click(function(){
+                clearInterval(a);
+            })
+            $("#clearbtn").click(function(){
+                clearInterval(a);
+                hours = 0;
+                mins = 0;
+                seconds = 0;
+                $("#timer").html(pad2(hours)+":"+pad2(mins)+":"+pad2(seconds));
+
+            })
+            
+    
+            
+        });
+
+    </script>
+</body>
+</html>

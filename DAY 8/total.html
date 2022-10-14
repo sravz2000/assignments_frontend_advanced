@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label>Product Name : </label>
+        <select id="s1" onchange="fn_showPrice()">
+            <option value="">Select</option>
+            <option value="10732">Sofa</option>
+            <option value="14199">Television</option>
+            <option value="30567">Air Conditioner</option>
+            <option value="12675">Dinig table</option>
+            <option value="7500">Cupboard</option>
+            <option value="12000">Refrigirator</option>
+            <option value="product not available">Other</option>
+        </select>
+
+        <label>Product Price : </label>
+        <input type="text" id="n1" name="number"/><br/><br/>
+
+        <label>Quantity : </label>
+        <input type="number" id="n2" name="number"/><br/><br/>
+        
+
+        <input type="button" value="Get Total" onclick="fn_GetProduct()"/>
+
+        
+
+    </form>
+
+    <p id="t1"></p>
+
+    <script  src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <script>
+        function fn_showPrice(){
+            var s= $("#s1").val();
+            $("#n1").val(s);
+        }
+        function fn_GetProduct(){
+          let  x  = 	$("#n1").val();
+		  let  y  = 	$("#n2").val();
+          let  z = parseInt(x) * parseInt(y);
+          $("#t1").html("Total Price  : "  +  z);
+        }
+    </script>
+</body>
+</html>

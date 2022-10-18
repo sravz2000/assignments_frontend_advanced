@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> jQuery Programming -- Display in Table  </h3>
+	<hr />
+    <input type="button" id="b1" value="Get Data"><br/><br/>
+    <table id="table1" border="2">
+        <tr>
+            <th>Credit Card Number</th>
+        </tr>
+        <tr>
+            <th>Card Holder Name</th>
+        </tr>
+        <tr>  
+            <th>Card Type</th>
+        </tr>
+        <tr>   
+            <th>Expiry Date</th>
+        </tr>
+        
+        
+    </table>
+    <script  src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        let customerObj={cardNumber : 1234456778997896, chName : "NarasimHa rAo", cardType :"visa", expireMonth : 12 , expireYear : 2023};
+        $(document).ready(function()
+        {
+
+            var str1=String(customerObj.cardNumber);
+            var strNo=str1.replace(str1.slice(0,12),"****-****-****-");
+
+            var str2=customerObj.chName;
+            var arr=str2.split(" ");
+            var u="";
+            var l="";
+            var strName="";
+            for(let item of arr){
+                u=item.charAt(0).toUpperCase();
+                l=item.substr(1).toLowerCase();
+                strName+=u+l+" ";
+            }
+           
+            var str3=customerObj.cardType;
+            strCard=str3.toUpperCase();
+
+            var str4=customerObj.expireMonth;
+            var str5=customerObj.expireYear;
+            var newDate=new Date(str5,str4);
+            const nameOfMonth=newDate.toLocaleString('default',{month:"short",});
+            var strDate=nameOfMonth+" "+str5;
+
+            /*
+            if(str4>11)
+            {
+                str4=12-str4;
+            }
+            var str5=customerObj.expireYear;
+            var months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+            var strDate=months[parseInt(str4)]+" "+ str5;*/
+
+            $("#b1").click(function()  
+                { 
+                    $("#table1 tr").eq(0).append('<td>'+strNo+'</td>');	
+                    $("#table1 tr").eq(1).append('<td>'+strName+'</td>');
+                    $("#table1 tr").eq(2).append('<td>'+strCard+'</td>');
+                    $("#table1 tr").eq(3).append('<td>'+strDate+'</td>');
+                });
+        });
+    </script>
+</body>
+</html>

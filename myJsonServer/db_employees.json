@@ -1,0 +1,34 @@
+{
+  "employees": [
+    {
+      "empno": 10,
+      "ename": "Akhilesh",
+      "job": "CEO",
+      "deptno": 100
+    },
+    {
+      "empno": 20,
+      "ename": "Bhavana",
+      "job": "Analyst",
+      "deptno": 101
+    },
+    {
+      "empno": 30,
+      "ename": "Catherene",
+      "job": "Consultant",
+      "deptno": 102
+    },
+    {
+      "empno": "50",
+      "ename": "Sravanthi",
+      "job": "Analyst",
+      "deptno": "3"
+    },
+    {
+      "empno": "60",
+      "ename": "bhavana",
+      "job": "Analyst",
+      "deptno": "4"
+    }
+  ]
+}

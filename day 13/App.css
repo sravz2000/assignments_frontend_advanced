@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+table{
+  text-align: center;
+  border: 2px solid black;
+  margin-left: 370px;
+}
+tr,td,th{
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  background-color: lavender;
+  border:1px solid black;
+}

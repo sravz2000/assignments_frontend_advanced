@@ -1,0 +1,45 @@
+<p>crud works!</p>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<h3>CRUD Operations</h3>
+
+<fieldset>
+
+    <label>Id  :  </label><input [(ngModel)]="id"   />  
+    <br/><br/>
+    <label>Name :  </label><input [(ngModel)]="name"   />  
+    <br/><br/>
+    <label>Price :  </label><input [(ngModel)]="price"   />  
+    <br/><br/>
+    <label>Category  :  </label><input  [(ngModel)]="category"   />  
+    <br/><br/>
+    <label>Quantity :  </label><input [(ngModel)]="quantity"   />  
+    <br/><br/>
+    
+    
+    <input type="button" value="Get Product" (click)="getProduct()" />
+    
+    <input type="button" value="Add Product" (click)="addProduct()" />  
+    <input type="button" value="Update Product" (click)="updateProduct(id)" />  
+    <input type="button" value="Reset" (click)="reset()"/> 
+
+    
+    <br/>
+    <br/>
+    
+    
+    <div *ngFor="let item of prodctsArray | slice:start:end">
+        <p>Product Id : {{item.id}}</p>
+        <p>Name : {{item.name}}</p>
+        <p>Price : {{item.price}}</p>
+        <p>Category:{{item.category}}</p>
+        <p>Quantity : {{item.quantity}}</p>
+         
+        <i class="bi bi-pencil-square" (click)="selectProducts(item.id)" ></i>
+        <i class="bi bi-trash" (click)="deleteProducts(item.id)"></i> 
+         
+    </div>
+
+    
+    </fieldset>
+
+    

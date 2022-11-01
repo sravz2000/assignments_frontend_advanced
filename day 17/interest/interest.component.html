@@ -1,0 +1,30 @@
+<p>interest works!</p>
+
+<link href="interest.component.css" rel="stylesheet" />
+<h3>Simple Interest</h3>
+<hr/>
+<fieldset>
+
+<label>Principle Amount  :  </label><input  [(ngModel)]="amt"   />  
+<br/><br/>
+<label>Annual Interest Rate :  </label><input [(ngModel)]="irate"   />  
+<br/><br/>
+<label>Period (in years)  :  </label><select  [(ngModel)]="period" >
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+</select>  
+<br/><br/>
+
+<input type="button" value="Calculate Simple Interest" (click)="CalculateSI()" />  
+
+<p> {{result}} </p>
+
+</fieldset>

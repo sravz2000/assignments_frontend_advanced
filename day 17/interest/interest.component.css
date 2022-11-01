@@ -1,0 +1,7 @@
+fieldset{
+    background-color: violet;
+    width: max-content;
+}
+label,p{
+    color: white;
+}

@@ -1,0 +1,11 @@
+div{
+    display: inline-block;
+    width: 150px;
+    background-color: bisque;
+    margin: 5px;
+    text-align: center;
+}
+i{
+    font-size: large;
+    margin: 4px;
+}

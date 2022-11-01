@@ -1,0 +1,55 @@
+<p>switch works!</p>
+ 
+
+<h3>Working with directives in Angulars</h3>
+<hr/>
+Select Display Mode :  
+
+
+<input type="radio" [(ngModel)]="mode" value="List" name="radio"><label>List</label>
+<input type="radio" [(ngModel)]="mode" value="Table" name="radio"><label>Table</label>
+<input type="radio" [(ngModel)]="mode" value="Card" name="radio"><label>Card</label>
+<br/><br/>
+<section [ngSwitch]="mode">
+    <article *ngSwitchCase=" 'List' ">
+        <ol>
+            <li *ngFor="let item of studentsArray">
+                Mr./Mrs. 
+                <span style="color:blue; font-weight: bold;">{{item.sname}}</span> 
+                joined in 
+            <span   [ngStyle]="{ color : (item.course == 'Angular')?'red':'green' }">{{item.course}} </span> 
+                course.
+            </li>
+        </ol>        
+    </article>
+
+    <article *ngSwitchCase=" 'Table' ">
+        <table border="2" cellspacing="0" cellpadding="5" width="500">
+            <tr class="bg1">
+              <th>S.No</th>
+              <th>Student Name</th>
+              <th>Course Name</th>
+            </tr>
+        
+            <tr *ngFor="let item of studentsArray;  let i = index; let x = even; let y = odd;"
+                [ngClass]="{'bg2':x, 'bg3':y}">
+              <td> {{i + 1}}</td>
+              <td>{{item.sname}}</td>
+              <td>{{item.course}}</td>
+            </tr>
+        
+          </table>
+    </article>
+
+    <article *ngSwitchCase=" 'Card' ">
+        <div *ngFor="let item of studentsArray" class="c1">
+            <p class="c2">{{item.sname}}</p>
+            {{item.course}}
+        </div>
+    </article>
+    
+</section><br/>
+
+<div *ngIf="studentsArray.length == 0">
+    **Students details are not available at this movement. 
+</div>

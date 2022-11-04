@@ -1,0 +1,7 @@
+input{
+  margin: 10px;
+}
+label,input,fieldset{
+  text-align: center;
+}
+

@@ -1,0 +1,28 @@
+{
+  "employees": [
+    {
+      "empno": 10,
+      "ename": "Akhilesh",
+      "job": "Staff",
+      "deptno": 100
+    },
+    {
+      "empno": 20,
+      "ename": "Anuhya",
+      "job": "Analyst",
+      "deptno": 101
+    },
+    {
+      "empno": "40",
+      "ename": "Sravanthi",
+      "job": "DC Analyst",
+      "deptno": "103"
+    },
+    {
+      "empno": "30",
+      "ename": "Pushpa",
+      "job": "Manager",
+      "deptno": "102"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+.error
+{
+    color : Red;
+}
+span{
+    font-size: medium; 
+}
+
+.div3{
+    background-color: wheat;
+    color: rgb(85, 6, 6);
+   font-weight: bold;
+  text-align: center;
+}
